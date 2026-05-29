@@ -1,0 +1,575 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>onlyforreshalovetaker</title>  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
+      background: linear-gradient(to bottom, #fff7fb, #ffddea);
+      color: #ff4f8b;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .sparkle {
+      position: absolute;
+      color: rgba(255,255,255,0.4);
+      animation: float 4s infinite ease-in-out;
+      font-size: 20px;
+    }
+
+    .s1 { top: 10%; left: 15%; }
+    .s2 { top: 20%; right: 15%; }
+    .s3 { bottom: 15%; left: 10%; }
+    .s4 { bottom: 20%; right: 10%; }
+    .s5 { top: 50%; left: 5%; }
+    .s6 { top: 60%; right: 5%; }
+
+    @keyframes float {
+      0%,100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(255,255,255,0.75);
+      border: 2px solid rgba(255,182,193,0.4);
+      border-radius: 30px;
+      padding: 35px 25px;
+      backdrop-filter: blur(12px);
+      text-align: center;
+      animation: fade 0.8s ease;
+      box-shadow: 0 10px 40px rgba(255,105,180,0.15);
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      opacity: 0.7;
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 16px;
+      background: rgba(255,192,203,0.18);
+      color: #ff4f8b;
+      outline: none;
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #ffb6d9, #ffcce6);
+      color: #ff4f8b;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      transform: scale(1.03);
+    }
+
+    .option {
+      background: rgba(255,192,203,0.18);
+      color: #ff4f8b;
+      margin: 10px 0;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .shake {
+      animation: shake 0.3s;
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .final-text {
+      line-height: 2;
+      font-size: 18px;
+    }
+
+    .heart {
+      font-size: 40px;
+      margin-bottom: 15px;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    .small {
+      font-size: 13px;
+      opacity: 0.6;
+      margin-top: 20px;
+    }
+
+    .floating-heart {
+      position: fixed;
+      bottom: -20px;
+      color: rgba(255,255,255,0.4);
+      animation: rise linear forwards;
+      pointer-events: none;
+    }
+
+    @keyframes rise {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-110vh);
+        opacity: 0;
+      }
+    }
+
+    .typing {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid white;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    .photo-frame {
+      width: 100%;
+      height: 180px;
+      border-radius: 20px;
+      margin-top: 20px;
+      background: rgba(255,255,255,0.07);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:14px;
+      opacity:0.7;
+    }
+
+    .tap-note {
+      margin-top:15px;
+      font-size:12px;
+      opacity:0.5;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    .small {
+      font-size: 13px;
+      opacity: 0.6;
+      margin-top: 20px;
+    }
+  </style></head>
+<body>  <audio autoplay loop>
+    <source src="https://files.catbox.moe/8f4j6w.mp3" type="audio/mpeg">
+  </audio>  <div id="loadingScreen" style="position:fixed; inset:0; background:black; display:flex; align-items:center; justify-content:center; z-index:9999; flex-direction:column; gap:15px;">
+    <div style="font-size:20px;">searching for acel . . .</div>
+    <div style="opacity:0.7; font-size:13px;">please wait ♡</div>
+  </div>  <div class="sparkle s1">🐱</div>
+  <div class="sparkle s2">🎀</div>
+  <div class="sparkle s3">🐾</div>
+  <div class="sparkle s4">♡</div>
+  <div class="sparkle s5">🐱</div>
+  <div class="sparkle s6">✦</div>
+  <div class="sparkle" style="top:35%; left:80%;">😺</div>
+  <div class="sparkle" style="top:70%; left:20%;">🐈</div>  <div class="card" id="page1">
+    <div style="font-size:55px; margin-bottom:10px;">🐱</div><h1>enter the password</h1>
+<div class="subtitle">clue: tanggal jadian 🎀</div>
+
+<input type="password" id="codeInput" placeholder="••-••-••" maxlength="8" style="letter-spacing:6px; font-size:24px; font-weight:600; text-align:center; background:rgba(255,255,255,0.9); color:#ff69b4; border:2px solid #ffc0cb; box-shadow:0 0 15px rgba(255,182,193,0.3);">
+
+<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:20px;">
+  <button onclick="addNumber('1')">1</button>
+  <button onclick="addNumber('2')">2</button>
+  <button onclick="addNumber('3')">3</button>
+  <button onclick="addNumber('4')">4</button>
+  <button onclick="addNumber('5')">5</button>
+  <button onclick="addNumber('6')">6</button>
+  <button onclick="addNumber('7')">7</button>
+  <button onclick="addNumber('8')">8</button>
+  <button onclick="addNumber('9')">9</button>
+  <button onclick="removeNumber()">⌫</button>
+  <button onclick="addNumber('0')">0</button>
+  <button onclick="checkCode()">enter</button>
+</div>
+
+<div class="message" id="codeMessage"></div>
+
+  </div>  <div class="card hidden" id="quizPage">
+    <h1 id="question"></h1><div id="options"></div>
+
+<div class="message" id="quizMessage"></div>
+<div class="message" id="correctMessage" style="color:#ff69b4;"></div>
+
+  </div>  <div class="card hidden" id="rewardPage">
+    <h1>your reward 🎀</h1><div style="font-size:90px; margin:20px 0; cursor:pointer;" onclick="eatChocolate()" id="choco">
+  🍫
+</div>
+
+<div class="subtitle">
+  tap the chocolate to eat it ♡
+</div>
+
+  </div>  <div class="card hidden" id="letterReward">
+    <h1>for acel ♡</h1><div style="line-height:2; text-align:left; font-size:14px; opacity:0.85; max-height:280px; overflow:auto;">
+  Dear Acel,
+  <br><br>
+  Thank you for loving me gently.
+  Thank you for staying even when I'm difficult to understand.
+  <br><br>
+  I know I'm not always easy to handle,
+  but you still choose me every single day.
+  <br><br>
+  And honestly?
+  that's one of the prettiest things anyone has ever done for me.
+  <br><br>
+  I hope this little website can remind you how loved you are.
+  <br><br>
+  You are my favorite person,
+  my comfort place,
+  and my sweetest home.
+  <br><br>
+  happy mensive, love.
+  <br><br>
+  — resha 🎀
+</div>
+
+<button onclick="openBalloonGame()">next ♡</button>
+
+  </div>  <div class="card hidden" id="finalPage">
+    <div class="heart">🐱</div><div class="final-text typing">
+  welcome, acel.<br>
+  you know resha pretty well, huh?<br><br>
+
+  verified boyfriend ✅
+</div>
+
+<div class="small">
+  property of resha
+</div>
+
+<div class="tap-note">tap continue ♡</div>
+
+<button onclick="openLetter()">continue ♡</button>
+
+  </div>  <div class="card hidden" id="letterPage">
+    <h1>for acel</h1>
+    <div class="subtitle">onlyforreshalovetaker 🎀</div><div style="line-height: 1.9; font-size: 14px; opacity: 0.9; text-align: left; max-height: 300px; overflow-y: auto; padding-right: 5px;">
+  thank you for staying.
+  <br><br>
+  makasih udah jadi rumah paling nyaman buat resha.
+  makasih udah selalu ada, walaupun kadang aku nyebelin, overthinking, atau terlalu banyak minta maaf.
+  <br><br>
+  web ini cuma tempat kecil buat ngingetin kalau aku sayang banget sama kamu.
+  dan mungkin aku ga selalu bisa ngomong semuanya secara langsung.
+  <br><br>
+  i hope you know,
+  di antara semua hal ribet di dunia ini,
+  kamu tetep jadi salah satu hal terbaik yang pernah datang.
+  <br><br>
+  please stay a little longer, okay?
+  <br><br>
+  — resha ♡
+</div>
+
+<button onclick="openMemory()">next page ✦</button>
+
+  </div>  <div class="card hidden" id="memoryPage">
+    <div class="photo-frame">
+      your cute photo goes here ♡
+    </div>
+    <h1>little things i love</h1><div style="margin-top:20px; text-align:left; line-height:2; font-size:14px; opacity:0.9;">
+  ♡ cara kamu manggil aku<br>
+  ♡ cara kamu nenangin aku<br>
+  ♡ cara kamu tetep stay<br>
+  ♡ cara kamu sabar sama aku<br>
+  ♡ semua hal kecil tentang kamu
+</div>
+
+<button onclick="showEnding()">one last thing ♡</button>
+
+  </div>  <div class="card hidden" id="balloonPage">
+    <h1>pop the balloons 🎈</h1>
+    <div class="subtitle">8 balloons for your mensive ♡</div><div id="balloonContainer" style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:20px;">
+</div>
+
+<button onclick="showEnding()" style="margin-top:20px;">finish game ♡</button>
+
+  </div>  <div class="card hidden" id="endingPage">
+    <div class="heart">🎀</div><h1>i love you</h1>
+
+<div class="subtitle">
+  forever isn't enough with you.
+</div>
+
+<div style="margin-top:20px; line-height:2; opacity:0.85;">
+  happy mensive, acel.<br>
+  thank you for existing.
+</div>
+
+  </div>  <script>
+    window.onload = () => {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').style.display = 'none';
+      }, 2200);
+
+      setInterval(createHeart, 900);
+    }
+
+    function createHeart(){
+      const heart = document.createElement('div');
+      heart.classList.add('floating-heart');
+      heart.innerText = ['♡','♥','✦','☾'][Math.floor(Math.random()*4)];
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      heart.innerText = ['🐱','🎀','♡','🐾'][Math.floor(Math.random()*4)];
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+
+    const correctCode = '08-05-26';
+
+    function addNumber(num){
+      const input = document.getElementById('codeInput');
+
+      if(input.value.length === 2 || input.value.length === 5){
+        input.value += '-';
+      }
+
+      if(input.value.length < 8){
+        input.value += num;
+      }
+    }
+
+    function removeNumber(){
+      const input = document.getElementById('codeInput');
+      input.value = input.value.slice(0,-1);
+    }
+
+    function checkCode() {
+      const input = document.getElementById('codeInput').value;
+      const message = document.getElementById('codeMessage');
+      const page = document.getElementById('page1');
+
+      if(input === correctCode){
+        page.classList.add('hidden');
+        document.getElementById('quizPage').classList.remove('hidden');
+        loadQuestion();
+      } else {
+        message.innerText = 'ihh salah 😾';
+        page.classList.add('shake');
+
+        setTimeout(() => {
+          page.classList.remove('shake');
+        }, 300);
+      }
+    }
+
+    const questions = [
+      {
+        question: '1. siapa nama lengkap resha?',
+        options: ['Reshavel Kael Morran', 'Aresha Kael Morran', 'Reshavel', 'Shavell Morran'],
+        answer: 'Reshavel Kael Morran',
+        wrong: 'ooo, gt yaa km',
+        correct: 'yey, pinternya pacarku'
+      },
+      {
+        question: '2. tanggal kamu confess sama aku?',
+        options: ['5 Mei', '7 Mei', '6 Mei', '8 Mei'],
+        answer: '7 Mei',
+        wrong: 'cek sekarang juga!',
+        correct: 'ciee beneran cinta aku'
+      },
+      {
+        question: '3. nama kucing aku?',
+        options: ['Miu', 'Piu', 'Riu', 'Biu'],
+        answer: 'Biu',
+        wrong: 'aku ga terima sih kalo jadi kucingku',
+        correct: 'baguss, sayang anak'
+      },
+      {
+        question: '4. aku suka hewan, kecuali?',
+        options: ['Gajah', 'Lebah', 'Ular', 'Laba-laba'],
+        answer: 'Ular',
+        wrong: 'SIAPA BILANG? ITU LUCU.',
+        correct: 'bener, ular serem ya abang'
+      },
+      {
+        question: '5. nama temen-temen aku, kecuali?',
+        options: ['Seno', 'Ata', 'Dhani', 'Shani'],
+        answer: 'Dhani',
+        wrong: 'ITU TEMENKU LOH YA',
+        correct: 'iyh, dia mantan bukan temen'
+      }
+    ];
+
+    let currentQuestion = 0;
+
+    function loadQuestion(){
+      const q = questions[currentQuestion];
+
+      document.getElementById('question').innerText = q.question;
+      document.getElementById('quizMessage').innerText = '';
+      document.getElementById('correctMessage').innerText = ''; 
+
+      const optionsDiv = document.getElementById('options');
+      optionsDiv.innerHTML = '';
+
+      q.options.forEach(option => {
+        const btn = document.createElement('button');
+        btn.classList.add('option');
+        btn.innerText = option;
+
+        btn.onclick = () => {
+          if(option === q.answer){
+            document.getElementById('correctMessage').innerText = q.correct;
+
+            setTimeout(() => {
+              currentQuestion++;
+
+              if(currentQuestion < questions.length){
+                loadQuestion();
+              } else {
+                document.getElementById('quizPage').classList.add('hidden');
+                document.getElementById('rewardPage').classList.remove('hidden');
+              }
+            }, 1200);
+          } else {
+              document.getElementById('quizPage').classList.add('hidden');
+              document.getElementById('finalPage').classList.remove('hidden');
+            }
+          } else {
+            document.getElementById('quizMessage').innerText = q.wrong;
+            document.getElementById('quizPage').classList.add('shake');
+
+            setTimeout(() => {
+              document.getElementById('quizPage').classList.remove('shake');
+            }, 300);
+          }
+        }
+
+        optionsDiv.appendChild(btn);
+      });
+    }
+  
+    function eatChocolate(){
+      const choco = document.getElementById('choco');
+      choco.innerText = '🍫';
+      choco.style.opacity = '0.3';
+
+      setTimeout(() => {
+        document.getElementById('rewardPage').classList.add('hidden');
+        document.getElementById('letterReward').classList.remove('hidden');
+      }, 700);
+    }
+
+    function openBalloonGame(){
+      document.getElementById('letterReward').classList.add('hidden');
+      document.getElementById('balloonPage').classList.remove('hidden');
+
+      const quotes = [
+        'you are loved ♡',
+        'thank you for staying',
+        'i am proud of you',
+        'you make me happy',
+        'please stay healthy',
+        'you are enough',
+        'i adore you',
+        'happy mensive 🎀'
+      ];
+
+      const container = document.getElementById('balloonContainer');
+      container.innerHTML = '';
+
+      quotes.forEach(q => {
+        const balloon = document.createElement('div');
+        balloon.innerText = '🎈';
+        balloon.style.fontSize = '55px';
+        balloon.style.cursor = 'pointer';
+        balloon.style.transition = '0.3s';
+
+        balloon.onclick = () => {
+          balloon.innerHTML = `<div style="font-size:12px; line-height:1.6;">${q}</div>`;
+          balloon.style.background = 'rgba(255,192,203,0.2)';
+          balloon.style.borderRadius = '18px';
+          balloon.style.padding = '10px';
+        }
+
+        container.appendChild(balloon);
+      });
+    }
+
+    function openLetter(){
+      document.getElementById('finalPage').classList.add('hidden');
+      document.getElementById('letterPage').classList.remove('hidden');
+    }
+
+    function openMemory(){
+      document.getElementById('letterPage').classList.add('hidden');
+      document.getElementById('memoryPage').classList.remove('hidden');
+    }
+
+    function showEnding(){
+      document.getElementById('memoryPage').classList.add('hidden');
+      document.getElementById('endingPage').classList.remove('hidden');
+    }
+  </script></body>
+</html>
